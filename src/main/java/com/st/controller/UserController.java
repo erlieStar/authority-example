@@ -12,10 +12,11 @@ import java.util.Map;
 public class UserController {
 
 
+    // 这个是为了测试没有注解时，是否会拦截
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public Map login() {
         Map<String, String> map = new HashMap<>();
-        map.put("msg", "loginsuccess");
+        map.put("msg", "login success");
         return map;
     }
 

@@ -22,7 +22,8 @@ public class AuthorityInterceptor implements HandlerInterceptor {
             return true;
         }
         // 这里为了方便直接传递了参数
-        // 一般的做法是从request中获取session，从session中获取用户信息
+        // 一般的做法是用户第一次登录，将信息放到session中
+        // 以后每次操作时从request中获取session，从session中获取用户信息
         // 然后根据用户信息从数据库中查权限信息
         String userAuthority = httpServletRequest.getParameter("userAuthority");
         if (!userAuthority.equals("admin")) {
